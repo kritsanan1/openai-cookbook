@@ -736,3 +736,47 @@ Supported formats (15+):
 - Treat prompt templates as versioned code artifacts with CI checks.
 
 This design is ready for implementation and aligns directly to the stated success criteria while maintaining extensibility for new platforms and campaign types.
+
+---
+
+## 10) Next Steps to Complete (Execution Checklist)
+
+### Next 48 Hours (Sprint Kickoff)
+
+1. Create MCP server interface contracts and lock `v1` JSON schemas for all 7 agents.
+2. Stand up core infrastructure (queue, Postgres, object storage, secrets manager, tracing).
+3. Implement orchestrator skeleton with stage-level retries and idempotency keys.
+4. Add QA gate stub (brand/legal/a11y checks) as a blocking publish condition.
+5. Define baseline benchmark dataset (last 90 days of campaign metrics) for before/after KPI measurement.
+
+### Next 2 Weeks (Minimum Viable Production)
+
+1. Ship Agents 1, 2, 5, and 6 first (strategy, copy, packaging, QA) for text-first publishing.
+2. Integrate platform preflight validators for Instagram, X, LinkedIn, TikTok.
+3. Implement approval console for exception-only human reviews.
+4. Turn on observability dashboards (latency, cost/post, QA fail reasons, publish success rate).
+5. Run load tests at 30 posts/day with p95 processing under 30 seconds.
+
+### Next 4–6 Weeks (Full Capability)
+
+1. Add Agent 3 visual generation pipeline with template fallback modes.
+2. Add Agent 4 SEO/hashtag intelligence with cache + rate-limit controls.
+3. Add Agent 7 analytics feedback loop with 1h/24h/7d optimization cycles.
+4. Launch A/B testing with adaptive traffic allocation.
+5. Scale to 100+ posts/day and validate SLA adherence for 14 consecutive days.
+
+### Definition of Done (Production Acceptance)
+
+- 80% reduction in manual production time confirmed by time-tracking baseline comparison.
+- 25% engagement lift sustained for at least two consecutive campaign cycles.
+- 95% brand compliance pass rate over rolling 30-day window.
+- p95 end-to-end generation latency < 30 seconds.
+- Stable throughput of 100+ posts/day with <2% publish failure rate.
+
+### Risks to Resolve Before Full Rollout
+
+- Platform API policy drift (mitigate with daily spec sync and preflight alerts).
+- Brand voice drift over time (mitigate with weekly prompt and rubric recalibration).
+- Cost blowouts during peak campaigns (mitigate with model tiering + token budgets).
+- Asset rendering bottlenecks (mitigate with async render queue and static fallback assets).
+
