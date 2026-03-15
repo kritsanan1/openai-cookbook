@@ -1,0 +1,17 @@
+[
+  {
+    "image": "./person_back_view.jpg",
+    "prompt": "Describe the pose in this image.",
+    "answer": "The person is facing away from the camera with their back visible."
+  },
+  {
+    "image": "./person_front_view.jpg",
+    "prompt": "Describe the pose in this image.",
+    "answer": "The person is facing the camera from the front."
+  },
+  {
+    "image": "./person_side_view.jpg",
+    "prompt": "Describe the pose in this image.",
+    "answer": "The person is shown in side profile."
+  }
+]
